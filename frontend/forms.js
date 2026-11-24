@@ -1,6 +1,6 @@
 import {notice} from './base.js'
 
-export function wire(form, save, after) {
+export function wire(form, save, after, onError) {
   if (!form) return
   form.onsubmit = async event => {
     event.preventDefault()
@@ -13,6 +13,7 @@ export function wire(form, save, after) {
       if (after) await after(result)
     } catch (error) {
       notice(status, error.message, true)
+      if (onError) await onError(error)
     } finally {
       button.disabled = false
     }
