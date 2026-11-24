@@ -1,0 +1,6 @@
+.hall-rooms{display:grid;grid-template-columns:1.7fr 1fr;gap:1.1rem}
+.hall-rooms section{border:1px solid var(--s-line);padding:1rem}
+.proscenium{background:var(--s-accent);color:var(--s-onaccent);padding:.55rem 1rem;text-align:center}
+.seat-line{display:grid;grid-template-columns:5em repeat(2,minmax(0,1fr));gap:.65rem;align-items:center;margin:.65rem 0}
+.seat-line article{display:grid;justify-items:start;padding:.6rem;border:1px solid var(--s-line);background:var(--s-panel)}
+@media(max-width:720px){.hall-rooms{grid-template-columns:1fr}.seat-line{grid-template-columns:3em repeat(2,minmax(0,1fr))}}
